@@ -9,6 +9,7 @@ public class Main {
         changeArray();
         fillDiagonal();
         findMinMax();
+//        checkBalance(Arrays.toString());
 
     }
 
@@ -92,6 +93,32 @@ public class Main {
             System.out.println("MinVal = " + minVal);
             System.out.println("MaxVal = " + maxVal);
         }
+
+    }
+
+// 6.упражнение
+
+    public static boolean checkBalance(int[] balanceArray) {
+//        int [] balanceArray = {2, 2, 2, 1, 2, 2 || 10, 1};
+        if (balanceArray.length <=1) {
+            System.out.println("Array length error! expected 2 or more items!");
+            return false;
+        }
+        int[] sumArray = new int[balanceArray.length];
+        sumArray[0] = balanceArray[0];
+        for (int i = 1; i < balanceArray.length; i++) {
+            sumArray[i] = sumArray[i-1] + balanceArray[i];
+        }
+        if (sumArray[sumArray.length -1] % 2 != 0) return false;
+        for (int i = 0; i < sumArray.length -1; i++) {
+            if (sumArray[sumArray.length -1] == sumArray[i] * 2) {
+                System.out.println("First balance position " + (i + 1) + " and " + (i + 2));
+                System.out.println("First balance elements " + sumArray[i] + " and " + sumArray[i + 1]);
+                System.out.println("First balance sum = " + sumArray[i]);
+                return true;
+            }
+        }
+        return false;
 
     }
 

@@ -21,8 +21,8 @@ public class Main {
                 System.out.println("Загаданное число больше");
             }
 
-
         }
         scanner.close();
     }
+
 }
