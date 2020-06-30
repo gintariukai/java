@@ -13,8 +13,7 @@ public class MainNumber {
         scanner = new Scanner(System.in);
         random = new Random();
 
-    //    lessMoreGame();
-//        guessGame();
+        lessMoreGame();
         guessWordGame();
 
     }
